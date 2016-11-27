@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+</head>
+<body> 
+    <div id="hallmassage">
+        <div id="hallpersoncircle">
+        	<p id="personhall"><img src="images/rightarrow.png" / id="phimg1"><img src="images/downarrow.png" id="phimg2" />大厅人数（在线人数：....）</p>
+        	<ul id="hallperson">
+                <li>-0-</li>
+                <li>@-@</li>
+            </ul>
+            <p id="friendsmy"><img src="images/rightarrow.png" / id="mfimg1"><img src="images/downarrow.png" id="mfimg2"/>我的好友(3/8)</p>
+            <ul id="myfriends">
+            	<li>好友1</li>
+                <li>好友3</li> 
+            </ul>
+        </div>
+        
+        
+        <div id="exit">
+        	<a href="index.html" style="color:#FFFFFF;">退出</a>
+        </div>
+    </div>
+    <style>
+	#hallmassage{
+	margin-top:10px;
+	background-color:rgba(0, 0, 0, 0.298039215686275);
+	font-family:'华文新魏';
+  	color:#FFF;
+}
+#hallmassage p{
+	cursor:pointer;
+}
+#hallpersoncircle ul{
+	display:none;
+}
+#phimg2{
+	display:none;
+}
+#mfimg2{
+	display:none;
+}
+</style>
+<script>
+$(document).ready(function() {
+    $("#personhall").click(function(){
+		$("#hallperson").slideToggle("slow");
+		$("#phimg1").toggle();
+		$("#phimg2").toggle();
+	})
+});
+
+$(document).ready(function() {
+    $("#friendsmy").click(function(){
+		$("#myfriends").slideToggle("slow");
+		$("#mfimg1").toggle();
+		$("#mfimg2").toggle();
+	})
+});
+
+
+</script>
+</body>
+</html>

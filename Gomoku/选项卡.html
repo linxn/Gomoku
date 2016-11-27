@@ -1,0 +1,66 @@
+<!doctype html public "-//w3c//dtd xhtml 1.0 transitional//en" "http://www.w3.org/tr/xhtml1/dtd/xhtml1-transitional.dtd">
+<html lang="us-en">
+<head>
+<title>css选项卡(html组件)</title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-type" content="text/html; charset=gb2312" />
+<meta name="keywords" content=" "/>
+<meta name="description" content="" />
+<style type="text/css">
+div.card div{ background-color:#FF8000; float:left;  padding:1px; padding-bottom:0; clear:both; width:405px;}
+div.card a{ color:black; font-size:14px; text-decoration:none;  float:left; width:100px; text-align:center; background-color:white; margin-right:1px;}
+div.card div.home a.home{ font:normal normal bold 14px/1.5 宋体;}
+div.card div.international a.international { font:normal normal bold 14px/1.5 宋体;}
+div.card div.sport a.sport{ font:normal normal bold 14px/1.5 宋体;}
+div.card div.finance a.finance{ font:normal normal bold 14px/1.5 宋体;}
+div.card div.content{ background-color:white; border:1px solid #ff8000; height:100px;}
+</style>
+<script type="text/javascript">
+var shq={}
+shq.cmenu=function(e)
+{
+var e=window.event?window.event.srcElement:e.target;
+        if(/a/i.test(e.tagName)){
+        e.parentNode.className=e.className;
+        e.parentNode.nextSibling.innerHTML=e.innerHTML;
+        e.parentNode.nextSibling.style.cssText='border-top:none';
+        e.blur();
+        }
+}
+</script>
+</head>
+<body>
+<div class="card">
+<div onclick="shq.cmenu(event)">
+<a href="#" class="home">国内</a>
+<a href="#" class="international">国际</a>
+<a href="#" class="sport">体育</a>
+<a href="#" class="finance">财经</a>
+</div><div class="content"></div>
+</div>
+
+<div class="card">
+<div onclick="shq.cmenu(event)">
+<a href="#" class="home">国内</a>
+<a href="#" class="international">国际</a>
+<a href="#" class="sport">体育</a>
+<a href="#" class="finance">财经</a>
+</div><div class="content"></div>
+</div>
+
+<div class="card">
+<div onclick="shq.cmenu(event)">
+<a href="#" class="home">国内</a>
+<a href="#" class="international">国际</a>
+<a href="#" class="sport">体育</a>
+<a href="#" class="finance">财经</a>
+</div><div class="content"></div>
+</div>
+</body>
+</html><script language="Javascript"> 
+var now = new Date(); 
+document.write("<img src='http://counter.yesky.com/counter.shtml?CID=54197&AID=-1&refer="+escape(document.referrer)+"&rand="+ now.getTime()  + "&cur="+escape(document.URL)+"' border='0' alt='' width='0' height='0'>"); 
+</script> 
+<noscript> 
+<img src="http://counter.yesky.com/counter.shtml?CID=54197&AID=-1&refer=noscriptcounter&cur=noscriptcounter" border='0' width='0' height='0'/> 
+</noscript>

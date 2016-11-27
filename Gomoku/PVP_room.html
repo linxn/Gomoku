@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>PVP_room</title>
+    <link href="css/PVP_room.css" rel="stylesheet" type="text/css" />
+    <script src="js/PVE.js" ></script>
+	<script src="SpryAssets/SpryEffects.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/information.js">
+    </script>
+	<script type="text/javascript" src="js/cheatroom.js">
+	</script>
+    <script type="text/javascript" src="js/halltree.js">
+	</script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+    <script src="js/jquery-1.11.1.min.js">
+</script>
+
+
+
+</head>
+
+<body>
+	<div id="player1" >
+    	<img src="images/u196.jpg" width="150" height="200" onmouseover="MM_effectAppearFade('personnaltxt', 1000, 0, 100, false)" onmouseout="MM_effectAppearFade('personnaltxt', 1000, 100, 0, false)" onload="MM_showHideLayers('personnaltxt','','hide')">
+    	<div id="personnaltxt">
+ 	       <table  border="0">
+              <tr>
+                <th scope="row">昵称：</th>
+                <td>0-0</td>
+              </tr>
+              <tr>
+                <th scope="row">积分：</th>
+                <td>5000</td>
+              </tr>
+              <tr>
+                <th scope="row">等级：</th>
+                <td>大师</td>
+              </tr>
+              <tr>
+                <th scope="row">胜场：</th>
+                <td>500</td>
+              </tr>
+              <tr>
+                <th scope="row">胜率：</th>
+                <td>100%</td>
+              </tr>
+          </table>
+	  </div>
+</div>
+
+    
+<div id="player2">
+    	<img src="images/u198.jpg" width="150" height="200" onmouseover="MM_effectAppearFade('personnaltxt1', 1000, 0, 100, false)" onmouseout="MM_effectAppearFade('personnaltxt1', 1000, 100, 0, false)" onload="MM_showHideLayers('personnaltxt1','','hide')" />
+  <div id="personnaltxt1">
+ 	       <table  border="0">
+              <tr>
+                <th scope="row">昵称：</th>
+                <td>:/</td>
+              </tr>
+              <tr>
+                <th scope="row">积分：</th>
+                <td>4900</td>
+              </tr>
+              <tr>
+                <th scope="row">等级：</th>
+                <td>大师</td>
+              </tr>
+              <tr>
+                <th scope="row">胜场：</th>
+                <td>485</td>
+              </tr>
+              <tr>
+                <th scope="row">胜率：</th>
+                <td>90%</td>
+              </tr>
+          </table>
+	  </div>
+    </div>
+<div id="chessboard">
+<canvas id="canvas" width="700" height="700" style = "border:1px solid;background-image:url(images/chessbg.png);background-size:cover; "></canvas>
+<br />
+<button type="button" id="chessbutton">和棋</button>|<button type="button" id="chessbutton">悔棋</button>|<button type="button" id="chessbutton">认输</button>
+</div>
+
+<div id="rightarea">
+    <div id="exit">
+        <a href="PVP_hall.html" style="color:#FFFFFF;">退出</a>
+    </div>
+    <div id="card">
+        <div id="menu">
+        	<ul>
+            	<li id="room">房间</li>
+                <li id="friends">好友</li>
+            </ul>
+        </div>
+        <div id="message">
+        	<div id="roommessage">
+            	<table width="100%" border="0">
+                  <tr>
+                    <th scope="col">昵称</th>
+                    <th scope="col">等级</th>
+                    <th scope="col">胜率</th>
+                  </tr>
+                  <tr>
+                    <td>0-0</td>
+                    <td>大师</td>
+                    <td>100%</td>
+                  </tr>
+                  <tr>
+                    <td>：/</td>
+                    <td>大师</td>
+                    <td>90%</td>
+                  </tr>
+                </table>
+            </div>
+            <div id="friendsmessage">
+                <div id="hallmassage">
+                    <div id="hallpersoncircle">
+                        <p id="friendsmy"><img src="images/rightarrow.png" / id="mfimg1"><img src="images/downarrow.png" id="mfimg2"/>我的好友(3/8)</p>
+                        <ul id="myfriends">
+                            <li>好友1</li>
+                            <li>好友3</li> 
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="cheat">
+        <form action="">
+          <fieldset>
+          <legend>cheat:</legend>
+                     <div id="out" ></div>
+          <textarea class="emotion" cols="30" rows="2" id="cheattext"></textarea>
+          <input id="face" type="button" value=表情 >
+          <input id="analytic" type="button" value="发送">
+        
+          </fieldset>
+        </form>
+    </div>
+</div>
+
+
+
+<script>
+var canvas=document.getElementById('canvas');
+var cxt=canvas.getContext('2d');
+var img_b=new Image();
+img_b.src ="images/b.png";
+var img_w=new Image();
+img_w.src="images/w.png";
+var chessData = new Array(15);//这个为棋盘的二维数组用来保存棋盘信息，初始化0为没有走过的，1为白棋走的，2为黑棋走的 
+for (var x = 30; x <= 670; x+=40) 
+{ 
+	chessData[x] = new Array(15); 
+	for (var y = 30; y <= 670; y+=40) 
+	{ 
+		chessData[x][y] = 0; 
+	} 
+} 
+var isBlack = true;//轮到哪方下棋
+var isWell = false;//是否结束
+for (var i = 30; i <= 670; i += 40) {//绘制棋盘的线 
+cxt.beginPath(); 
+cxt.moveTo(30, i); 
+cxt.lineTo(670, i); 
+cxt.closePath(); 
+cxt.stroke(); 
+cxt.beginPath(); 
+cxt.moveTo(i, 30); 
+cxt.lineTo(i, 670); 
+cxt.closePath(); 
+cxt.stroke(); 
+} 
+
+
+
+canvas.onclick=function(e){//给canvas添加点击事件
+    e=e||event;//获取事件对象
+    //获取事件在canvas中发生的位置
+	var bbox = canvas.getBoundingClientRect();
+    var x=Math.round((e.clientX-canvas.offsetLeft-bbox.left-30)/40)*40+30;
+    var y=Math.round((e.clientY-canvas.offsetTop- bbox.top-30)/40)*40+30;
+    //如果事件位置在矩形区域中
+	if (isWell == true) { 
+	alert("已经结束了，如果需要重新玩，请刷新"); 
+	return; 
+	} 
+	if (chessData[x][y] != 0) {//判断该位置是否被下过了 
+	alert("你不能在这个位置下棋"); 
+	return; 
+	} 
+    if(isBlack){
+		isBlack = false;
+        cxt.drawImage(img_b,x-20,y-20);
+		chessData[x][y] = 1;//黑棋
+	}
+	else{
+		isBlack =true;
+		cxt.drawImage(img_w,x-20,y-20);
+		chessData[x][y] = 2;//白棋
+	}
+}
+
+</script>
+
+</body>
+</html>
