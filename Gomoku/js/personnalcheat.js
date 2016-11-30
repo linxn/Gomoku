@@ -3,22 +3,25 @@
 //创建聊天LI菜单及显示内容框
 $(document).ready(function() {
     $("#cheatpersonnal").click(function(){
-		var id = "n"+$("#nm1").text();
-		var n = "<li id=n"+$("#nm1").text()+">"+$("#nm1").text()+"</li>";
+		var id = "nm"+$("#nm").text();
+		var n = "<li id=nm"+$("#nm").text()+">"+$("#nm").text()+"<img src='images/closecheat.png' id=m"+$("#nm").text()+"></li>";
 		$("#blanks").css({"display":"block"});
     	$("#personnalcheat").css({"display":"block"});
 		if($("#"+id).size()==false){
 			$("#psn").append(n);
-			$("#textout").append("<div id='dn"+$("#nm1").text()+"'></div>");
+			$("#textout").append("<div id='dnm"+$("#nm").text()+"'></div>");
 			
 			$("#personnalname li").removeClass("plclick");
 			$("#"+id).addClass("plclick");
 			$("#textout div").removeClass("block");
 			$("#textout div").addClass("none");
-			$("#dn"+$("#nm1").text()).removeClass("none");
-			$("#dn"+$("#nm1").text()).addClass("block");
+			$("#dnm"+$("#nm").text()).removeClass("none");
+			$("#dnm"+$("#nm").text()).addClass("block");
 			}
 		else{
+			$("#nm"+$("#nm").text()).css({"display":"block"});
+			$("#dnm"+$("#nm").text()).removeClass("none");
+			$("#dnm"+$("#nm").text()).addClass("block");
 		}
 	})
 });
@@ -69,7 +72,20 @@ $(document).ready(function(){
     	$("#personnalcheat").css({"display":"none"});	
   });
 });
+$(document).ready(function(){
+	$(document).on("click","#psn img",function(e){
+		$("#n"+$(e.target).attr('id')).css({"display":"none"});
+		$("#dn"+$(e.target).attr('id')).addClass("none");
+		$("#dn"+$(e.target).attr('id')).removeClass("plclick");	
+		if($("#personnalname li").is(":visible")){
 
+		}
+		else{
+			$("#blanks").css({"display":"none"});
+    	    $("#personnalcheat").css({"display":"none"});
+		}
+  });
+});
 //消息提示
 $(document).ready(function(){
 	var bk ;

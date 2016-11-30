@@ -61,7 +61,7 @@
         <fieldset>
         <legend>Personal information:</legend>
         房间名：<br />
-		<input type="text" name="RoomID">
+		<input type="text" name="RoomID" id="roomname">
         <br />
         <br />
 		模式：
@@ -143,6 +143,7 @@
             <ul id="myfriends">
             	<li id="one">好友1</li>
                 <li>好友3</li> 
+                <li class="lixian">好友2</li>
             </ul>
         </div>
         <div>
@@ -162,7 +163,7 @@
             <img src="images/u492.jpg" width="106" height="106" />
         </div>
         <div id="name">
-                <div id="nme">昵称：</div><div id="nm"></div>
+                <div id="nme">昵称：</div><div id="nm">0-0</div>
         </div>
         <div id="rank">
                 <div id="rnk">等级：</div><div id="rk">大师</div>
@@ -179,8 +180,16 @@
             <div id="wrt">胜率：</div><div id="wt">100%</div>
         </div>
      </div>
+     
      <div id="fadd">
+
         <button id="friendadds">添加好友+</button>
+ 		<button type="button" id="cheatpersonnal">私聊</button>
+        <button type="button" id="frienddelete">删除好友-</button>  
+     </div>
+     <div id="fem">
+     <em id="tianjia">添加好友成功</em>
+     <em id="shanchu">删除好友成功</em>
      </div>
      <div id="btpsithclose">
     <img src="images/close.png" id="btpsithc"/>
@@ -188,48 +197,17 @@
 </div>
 
 
-<div id="friendsinthehall">
-    <div id="up1">
-        <div id="head1">
-            <img src="images/u523.jpg" width="106" height="106" />
-        </div>
-        <div id="name1">
-                <div id="nme1">昵称：</div><div id="nm1">211</div>
-        </div>
-        <div id="rank1">
-                <div id="rnk1">等级：</div><div id="rk1">大师</div>
-        </div>
-    </div> 
-    <div id="down1">               
-        <div id="score1">
-            <div id="sore1">积分：</div><div id="sre1">5000</div>
-        </div>
-        <div id="wingames1">
-            <div id="wgs1">胜场：</div><div id="ws1">500</div>
-        </div>
-        <div id="winrate1">
-            <div id="wrt1">胜率：</div><div id="wt1">100%</div>
-        </div>
-     </div>
-     <div id="fdelete">
-     	<button type="button" id="cheatpersonnal">私聊</button>
-        <button type="button" id="frienddelete">删除好友-</button>
-     </div>
-     <div id="btfithclose">
-    <img src="images/close.png" id="btfithc"/>
-     </div>
-</div>
 
 <div id="personnalcheat">
 	<div id="personnalname">
     	<ul id="psn">
-        	<li id="n123">123</li>
-            <li id="n323">323</li>
+        	<li id="nm123">123<img src="images/closecheat.png" id="m123"/></li>
+            <li id="nm323">323<img src="images/closecheat.png" id="m323"/></li>
         </ul>
     </div>
 	<div id="textout">
-    	<div id="dn123"></div>
-        <div id="dn323"></div>
+    	<div id="dnm123"></div>
+        <div id="dnm323"></div>
     </div>
     <div id="textin">
     	<textarea  cols="30" rows="1" id="intext"></textarea>
@@ -245,6 +223,7 @@
 <script type="text/javascript">
 	// 绑定表情
 	$('#face').SinaEmotion($('.emotion'));
+	$('#pface').SinaEmotion($('#intext'));
 </script>
 
 

@@ -4,7 +4,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>PVP_room</title>
     <link href="css/PVP_room.css" rel="stylesheet" type="text/css" />
-    <script src="js/PVE.js" ></script>
+
+    <script src="js/jquery-1.11.1.min.js">
+</script>
+    <script src="js/PVP.js" ></script>
 	<script src="SpryAssets/SpryEffects.js" type="text/javascript"></script>
     <script type="text/javascript" src="js/information.js">
     </script>
@@ -12,9 +15,6 @@
 	</script>
     <script type="text/javascript" src="js/halltree.js">
 	</script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
-    <script src="js/jquery-1.11.1.min.js">
-</script>
 
 
 
@@ -47,36 +47,37 @@
               </tr>
           </table>
 	  </div>
+      <div tme> </div>
 </div>
 
     
 <div id="player2">
     	<img src="images/u198.jpg" width="150" height="200" onmouseover="MM_effectAppearFade('personnaltxt1', 1000, 0, 100, false)" onmouseout="MM_effectAppearFade('personnaltxt1', 1000, 100, 0, false)" onload="MM_showHideLayers('personnaltxt1','','hide')" />
-  <div id="personnaltxt1">
- 	       <table  border="0">
-              <tr>
-                <th scope="row">昵称：</th>
-                <td>:/</td>
-              </tr>
-              <tr>
-                <th scope="row">积分：</th>
-                <td>4900</td>
-              </tr>
-              <tr>
-                <th scope="row">等级：</th>
-                <td>大师</td>
-              </tr>
-              <tr>
-                <th scope="row">胜场：</th>
-                <td>485</td>
-              </tr>
-              <tr>
-                <th scope="row">胜率：</th>
-                <td>90%</td>
-              </tr>
-          </table>
-	  </div>
-    </div>
+        <div id="personnaltxt1">
+               <table  border="0">
+                  <tr>
+                    <th scope="row">昵称：</th>
+                    <td>:/</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">积分：</th>
+                    <td>4900</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">等级：</th>
+                    <td>大师</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">胜场：</th>
+                    <td>485</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">胜率：</th>
+                    <td>90%</td>
+                  </tr>
+              </table>
+	    </div>
+</div>
 <div id="chessboard">
 <canvas id="canvas" width="700" height="700" style = "border:1px solid;background-image:url(images/chessbg.png);background-size:cover; "></canvas>
 <br />
@@ -115,19 +116,23 @@
                 </table>
             </div>
             <div id="friendsmessage">
-                <div id="hallmassage">
-                    <div id="hallpersoncircle">
-                        <p id="friendsmy"><img src="images/rightarrow.png" / id="mfimg1"><img src="images/downarrow.png" id="mfimg2"/>我的好友(3/8)</p>
-                        <ul id="myfriends">
-                            <li>好友1</li>
-                            <li>好友3</li> 
-                        </ul>
+                    <div id="hallmassage">
+                        <div id="hallpersoncircle">
+                            <p id="friendsmy"><img src="images/rightarrow.png" / id="mfimg1"><img src="images/downarrow.png" id="mfimg2"/>我的好友(3/8)</p>
+                            <ul id="myfriends">
+                                <li id="one">好友1</li>
+                                <li>好友3</li> 
+                            </ul>
+                        </div>
                     </div>
-                </div>
             </div>
         </div>
     </div>
-
+	<div id="room_name"></div>
+    <div id="room_pattern"></div>
+    <div id="room_rank"></div>
+    <div id="room_roundtime"></div>
+    
     
     <div id="cheat">
         <form action="">
@@ -142,7 +147,6 @@
         </form>
     </div>
 </div>
-
 
 
 <script>

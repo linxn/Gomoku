@@ -5,9 +5,6 @@ body{
 	background-size:cover;
 	
 }
-
-
-
 #roomlist{
 	position:absolute;
 	float:left;
@@ -177,6 +174,9 @@ body{
   	color:#FFF;
 	overflow:auto;
 }
+.lixian{
+	color:#999;
+}
 #hallperson li{
 	cursor:pointer;
 }
@@ -291,22 +291,8 @@ body{
 }
 #fadd{
 	position:absolute;
-	left:60%;
+	left:40%;
 	top:80%;
-}
-#friendadds{
-	background-color:rgba(162, 73, 62, 1);
-	border:none;
-	border-radius:5px;
-	-moz-box-shadow:none;
-	-webkit-box-shadow:none;
-	box-shadow:none;
-	font-family:'华文新魏';
-	font-weight:400;
-	font-style:normal;
-	font-size:20px;
-	padding:5px;
-	color:#FFF;
 }
 #btpsithclose{
 	position:absolute;
@@ -319,92 +305,7 @@ body{
 	height:20px;
 }
 
-#friendsinthehall{
-	position:absolute;
-	width:307px;
-	height:234px;
-	background:-webkit-linear-gradient(270deg, rgba(242, 242, 242, 1) 0%, rgba(242, 242, 242, 1) 0%, rgba(228, 228, 228, 1) 100%, rgba(228, 228, 228, 1) 100%);
-	background:-moz-linear-gradient(180deg, rgba(242, 242, 242, 1) 0%, rgba(242, 242, 242, 1) 0%, rgba(228, 228, 228, 1) 100%, rgba(228, 228, 228, 1) 100%);
-	background:linear-gradient(180deg, rgba(242, 242, 242, 1) 0%, rgba(242, 242, 242, 1) 0%, rgba(228, 228, 228, 1) 100%, rgba(228, 228, 228, 1) 100%);
-	box-sizing:border-box;
-	border-width:1px;
-	border-style:solid;
-	border-color:rgba(121, 121, 121, 1);
-	border-radius:10px;
-	-moz-box-shadow:none;
-	-webkit-box-shadow:none;
-	box-shadow:none;
-	display:none;
-}
-#up1{
-	margin:10px;
-}
-#head1{
-	float:left;
-	width:106px;
-	height:106px;
-	margin-right:10px;
-}
-#name1{
-	margin:10px 0 40px 20px;
-	padding-top:10px;
-}
-#nme1{
-	float:left;
-}
-#nm1{
-	float:left;
-}
-#rank1{
-	margin:10px;
-}
-#rnk1{
-	float:left;
-}
-#rk1{
-	float:left;
-}
-#down1{
-	clear:left;
-}
-#score1{
-	float:left;
-	margin:10px;
-	width:130px;
-}
-#sore1{
-	float:left;
-}
-#sre1{
-	float:left;
-}
-#wingames1{
-	margin:10px;
-	float:left;
-	width:100px;
-}
-#wgs1{
-	float:left;
-}
-#ws1{
-	float:left;
-}
-#winrate1{
-	margin:10px;
-	float:left;
-}
-#wrt1{
-	float:left;
-}
-#wt1{
-	float:left;
-}
-#fdelete{
-	position:absolute;
-	left:40%;
-	top:80%;
-}
-#fdelete button{
+#fadd button{
 	background-color:rgba(162, 73, 62, 1);
 	border:none;
 	border-radius:5px;
@@ -418,16 +319,14 @@ body{
 	padding:5px;
 	color:#FFF;
 }
-
-#btfithclose{
+#fem{
 	position:absolute;
-	left:90%;
-	top:0%;
-	z-index:5;
+	left:50%;
+	top:70%;
+	color:#F00;
 }
-#btfithc{
-	width:20px;
-	height:20px;
+#fem em{
+	display:none;
 }
 
 #personnalcheat{
@@ -476,6 +375,14 @@ body{
 	background-size:cover;
 	padding-left:25px;
 	
+}
+#psn{
+	overflow:auto;
+}
+#psn img{
+	margin-left:7px;	
+	margin-right:-5px;
+	z-index:500;
 }
 .plclick{
 	height:25px;

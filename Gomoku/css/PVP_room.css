@@ -1,7 +1,7 @@
 /* CSS Document */
 body{
 	background-image:url(../images/u114.jpg);	
-	background-repeat:no-repeat;
+
 	background-size:cover;
 }
 
@@ -80,9 +80,10 @@ body{
 }
 #menu li{
 	font-family:'Arial Negreta', 'Arial Normal', 'Arial';
-	font-weight:700;
+
 	font-style:normal;
 	font-size:20px;
+	padding-right:20px;
 	color:#009DDA;
 	float:left;
 	cursor:pointer;
@@ -90,6 +91,23 @@ body{
 	background-repeat:no-repeat;
 	background-size:cover;
 	list-style:none;
+}
+.menuclick{
+	border-right:groove;
+	border-bottom:groove;
+	font-weight:700;
+}
+#roommessage{
+	position:absolute;
+	top:10%;
+	width:100%;
+	display:block;
+}
+#friendsmessage{
+	position:absolute;
+	top:10%;
+	width:100%;
+	display:none;
 }
 #hallmassage{
 	margin-top:10px;
@@ -128,4 +146,16 @@ body{
 	color:#FFFFFF;
 	text-align:start;
 	
+}
+#room_name{
+	display:none;	
+}
+#room_pattern{
+	display:none;	
+}
+#room_rank{
+	display:none;	
+}
+#room_roundtime{
+	display:none;	
 }
